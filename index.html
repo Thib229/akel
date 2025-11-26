@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akel Service - Huiles Automobiles et Motos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Akel Service</div>
+            <div class="menu-toggle" onclick="toggleMenu()" role="button" aria-expanded="false" aria-controls="navLinks" title="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks" aria-hidden="true">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="produits.html">Produits</a></li>
+                <li><a href="apropos.html">À Propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section avec image background (sans overlay couleur) -->
+    <section class="hero hero-home" style="background-image: url('images/hero-bg.jpg');">
+        <div class="hero-content">
+            <h1>Akel Service</h1>
+            <p>Nous sommes spécialisés dans la vente d'huiles<br>automobiles et motos</p>
+            <a href="produits.html" class="cta-button">Découvrir nos produits</a>
+        </div>
+    </section>
+
+    <!-- Services Quick View -->
+    <section class="services-preview">
+        <div class="container">
+            <h2 class="section-title">Pourquoi Choisir Akel Service ?</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <!-- Icône SVG Qualité -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-orange);">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3>Qualité Garantie</h3>
+                    <p>Produits authentiques des meilleures marques internationales certifiées</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                            <!-- Icône Prix (étiquette) adaptée au contexte local) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" aria-hidden="true" role="img" style="color: var(--primary-orange);">
+                                <!-- Coin icon with FCFA text inside -->
+                                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+                                <circle cx="12" cy="12" r="7" fill="currentColor" opacity="0.08"></circle>
+                                <text x="12" y="15" text-anchor="middle" font-size="7" font-weight="700" fill="currentColor" style="font-family: Arial, Helvetica, sans-serif;">FCFA</text>
+                            </svg>
+                    </div>
+                    <h3>Prix Compétitifs</h3>
+                    <p>Les meilleurs tarifs du marché béninois avec un excellent rapport qualité-prix</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <!-- Icône SVG Expert -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-orange);">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Conseils Experts</h3>
+                    <p>Une équipe qualifiée et expérimentée pour vous orienter dans vos choix</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <!-- Icône SVG Livraison -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-orange);">
+                            <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+                        </svg>
+                    </div>
+                    <h3>Livraison Rapide</h3>
+                    <p>Service de livraison disponible à Cotonou et ses environs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section avec image et description -->
+    <section class="about-preview">
+        <div class="container">
+            <div class="about-preview-content">
+                <div class="about-preview-image">
+                    <img src="images/produit-featured.jpg" alt="Huiles Akel Service">
+                </div>
+                <div class="about-preview-text">
+                    <h2>Des Huiles de Qualité Supérieure</h2>
+                    <p>Chez Akel Service, nous comprenons l'importance d'utiliser des huiles de qualité pour prolonger la durée de vie de votre véhicule. C'est pourquoi nous proposons une sélection rigoureuse des meilleures marques du marché.</p>
+                    <p>Que vous possédiez une moto ou une voiture, nos experts sont là pour vous conseiller et vous aider à choisir le lubrifiant adapté à vos besoins spécifiques.</p>
+                    <ul class="feature-list">
+                        <li>✓ Produits certifiés et authentiques</li>
+                        <li>✓ Large gamme de volumes (1L, 4L, 5L)</li>
+                        <li>✓ Marques reconnues internationalement</li>
+                        <li>✓ Conseil personnalisé gratuit</li>
+                    </ul>
+                    <a href="apropos.html" class="btn-secondary">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Nos Produits Phares</h2>
+            <div class="product-showcase">
+                <div class="showcase-card">
+                    <div class="showcase-badge">1L</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-orange); margin-bottom: 1rem;">
+                        <path d="M12 2L19 7v10l-7 5-7-5V7z"/><polyline points="12 2 12 12"/>
+                    </svg>
+                    <h3>Huiles Moto</h3>
+                    <p>Shell, Yamalube, Champion, Eagle, et plus encore pour performances optimales</p>
+                    <a href="produits.html" class="btn-secondary">Voir la gamme</a>
+                </div>
+                <div class="showcase-card">
+                    <div class="showcase-badge">4L-5L</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-orange); margin-bottom: 1rem;">
+                        <path d="M18 6h-5a2 2 0 0 0-2 2v11"/><path d="M14 9h4l4 4v8a2 2 0 0 1-2 2h-2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/>
+                    </svg>
+                    <h3>Huiles Voiture</h3>
+                    <p>Champion, Shell Hélix, Bardahl, Prima pour votre automobile</p>
+                    <a href="produits.html" class="btn-secondary">Voir la gamme</a>
+                </div>
+                <div class="showcase-card">
+                    <div class="showcase-badge">Premium</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-orange); margin-bottom: 1rem;">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                    <h3>Gamme Premium</h3>
+                    <p>Les meilleures huiles haute performance pour résultats exceptionnels</p>
+                    <a href="produits.html" class="btn-secondary">Découvrir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Besoin de conseils pour choisir votre huile ?</h2>
+            <p>Notre équipe est là pour vous aider à trouver le produit parfait pour votre véhicule</p>
+            <a href="contact.html" class="cta-button">Nous Contacter</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Akel Service</h3>
+                <p>Votre spécialiste en huiles automobiles et motos à Cotonou</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="produits.html">Produits</a></li>
+                    <li><a href="apropos.html">À Propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📱 +229 62 80 30 08</p>
+                <p>📍 Akorgbato, Cotonou</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Akel Service. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>c

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - Akel Service</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Akel Service</div>
+            <div class="menu-toggle" onclick="toggleMenu()" role="button" aria-expanded="false" aria-controls="navLinks" title="Ouvrir le menu" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="produits.html">Produits</a></li>
+                <li><a href="apropos.html" class="active">À Propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section avec background -->
+    <section class="page-header page-header-image" style="background-image: url('images/hero-bg.jpg'); background-size: cover; background-position: center;">
+        <div class="container">
+            <h1>Akel Service</h1>
+            <p>Nous sommes spécialisés dans la vente d'huiles automobiles et motos</p>
+        </div>
+    </section>
+
+    <!-- Qui sommes-nous -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-intro">
+                <h2 class="section-title">Qui sommes-nous ?</h2>
+                <p class="intro-text">Akel Service est une entreprise familiale dédiée à la distribution d'huiles moteur pour véhicules légers et deux-roues. Depuis notre création, nous sélectionnons des lubrifiants auprès de fournisseurs certifiés pour offrir performance, longévité moteur et conformité aux recommandations constructeurs.</p>
+            </div>
+
+            <div class="expertise-block">
+                <h3 class="subsection-title">Notre expertise</h3>
+                <p>Nos techniciens maîtrisent les spécifications SAE, ACEA, API et les normes constructeurs (BMW, Mercedes, Peugeot, Honda, Yamaha, etc.). Nous aidons les particuliers et les professionnels (garages, ateliers, motards) à choisir l'huile adaptée à leur usage — ville, route, conduite sportive ou charge lourde.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-box">
+                    <div class="service-icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-orange);">
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/><circle cx="12" cy="12" r="10"/>
+                        </svg>
+                    </div>
+                    <h4>Conseil personnalisé</h4>
+                    <p>Avant chaque recommandation, nous prenons en compte le modèle, l'année, le kilométrage et le type d'utilisation pour proposer l'huile optimale.</p>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-orange);">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h4>Produits certifiés</h4>
+                    <p>Tous nos produits sont accompagnés de fiches techniques et de certificats garantissant leur conformité et leur qualité.</p>
+                </div>
+                <div class="service-box">
+                    <div class="service-icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-orange);">
+                            <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+                        </svg>
+                    </div>
+                    <h4>Livraison et service</h4>
+                    <p>Livraison rapide, emballages sûrs et service après-vente réactif : nous accompagnons chaque commande jusqu'à satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-text">
+                    <h2 class="section-title">Notre mission</h2>
+                    <p class="mission-description">Offrir aux conducteurs les meilleures huiles pour préserver la fiabilité et la performance des moteurs tout en proposant des conseils techniques clairs et simples à comprendre.</p>
+                </div>
+                <div class="values-box">
+                    <h3>Nos valeurs</h3>
+                    <ul class="values-list">
+                        <li><span class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-orange);">
+                                <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                        </span> Transparence sur la qualité et l'origine des produits</li>
+                        <li><span class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-orange);">
+                                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </span> Conseils techniques indépendants et objectifs</li>
+                        <li><span class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-orange);">
+                                <path d="M12 2v20M2 12h20"/>
+                            </svg>
+                        </span> Respect des normes environnementales et sécurité</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos gammes -->
+    <section class="gammes-section">
+        <div class="container">
+            <h2 class="section-title">Nos gammes d'huiles</h2>
+            <p class="section-intro">Nous proposons une sélection complète d'huiles moteur adaptées à tous les besoins :</p>
+
+            <div class="gammes-grid">
+                <article class="gamme-card">
+                    <div class="gamme-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-orange);">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
+                    <h3>Huiles synthétiques</h3>
+                    <p>Formulations performantes pour optimiser la protection et réduire l'usure, idéales pour moteurs modernes et utilisation intensive.</p>
+                </article>
+
+                <article class="gamme-card">
+                    <div class="gamme-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-orange);">
+                            <circle cx="12" cy="12" r="10"/><line x1="14.31" y1="8" x2="20.05" y2="17.94"/><line x1="9.69" y1="8" x2="21.17" y2="8"/><line x1="7.38" y1="12" x2="13.12" y2="2.06"/><line x1="9.69" y1="16" x2="3.95" y2="6.06"/><line x1="14.31" y1="16" x2="2.83" y2="16"/><line x1="16.62" y1="12" x2="10.88" y2="21.94"/>
+                        </svg>
+                    </div>
+                    <h3>Huiles semi-synthétiques</h3>
+                    <p>Bon compromis entre protection et coût — adaptées aux véhicules récents à kilométrage moyen.</p>
+                </article>
+
+                <article class="gamme-card">
+                    <div class="gamme-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-orange);">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                        </svg>
+                    </div>
+                    <h3>Huiles minérales</h3>
+                    <p>Solution économique pour véhicules plus anciens ou usages basiques, en respectant les préconisations constructeurs.</p>
+                </article>
+
+                <article class="gamme-card">
+                    <div class="gamme-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-orange);">
+                            <path d="M12 2L19 7v10l-7 5-7-5V7z"/><polyline points="12 2 12 12"/>
+                        </svg>
+                    </div>
+                    <h3>Huiles pour motos</h3>
+                    <p>Huiles spécifiques pour moteurs et transmissions de motos, y compris les formules 4T et huiles pour boîte/twin-clutch.</p>
+                </article>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <!-- Qualité et certifications -->
+    <section class="qualite-section" style="padding: 5rem 0; background: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title">Qualité et certifications</h2>
+            <p class="section-intro">Nous travaillons uniquement avec des fournisseurs qui respectent les normes internationales :</p>
+
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <div class="cert-badge">API</div>
+                    <p>American Petroleum Institute</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-badge">ACEA</div>
+                    <p>European Automobile Manufacturers' Association</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-badge">OEM</div>
+                    <p>Approvals constructeur (BMW, VW, Mercedes...)</p>
+                </div>
+            </div>
+
+            <p class="quality-text" style="background: var(--white-bg); padding: 2rem; border-radius: 15px; color: var(--text-gray); margin-top: 3rem;">
+                Nos produits sont testés en laboratoire et contrôlés avant expédition. Sur demande, nous fournissons les FDS et les fiches techniques détaillées.
+            </p>
+        </div>
+    </section>
+
+    <!-- Témoignages -->
+    <section class="temoignages-section" style="padding: 5rem 0; background: var(--white-bg);">
+        <div class="container">
+            <h2 class="section-title">Ce que disent nos clients</h2>
+
+            <!-- Slider simple : auto-advance every 15s, user can navigate with controls / dots -->
+                <div class="temoignages-grid">
+                    <div class="testimonial-card">
+                        <div class="quote-icon">💬</div>
+                        <p class="testimonial-text">« Service rapide et conseils précis — mon moteur tourne plus rond depuis la vidange. »</p>
+                        <footer class="testimonial-author">— Julien, Particulier</footer>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="quote-icon">💬</div>
+                        <p class="testimonial-text">« Fournisseur fiable pour notre atelier mécanique. Produits conformes et livraison ponctuelle. »</p>
+                        <footer class="testimonial-author">— Garage AutoPlus</footer>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="quote-icon">💬</div>
+                        <p class="testimonial-text">« Invité par une amie, je ne m'attendais pas à une telle explosion de saveurs. Chaque plat est un délice, parfaitement présenté et généreusement servi. Le personnel est attentionné et l'ambiance chaleureuse. »</p>
+                        <footer class="testimonial-author">— Pascal Lokossa</footer>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Besoin d'un conseil personnalisé ?</h2>
+            <p>Nous aidons à choisir l'huile idéale pour votre véhicule. Envoyez-nous la marque, le modèle, l'année et le kilométrage.</p>
+            <a href="contact.html" class="cta-button">Contacter l'équipe</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Akel Service</h3>
+                <p>Votre spécialiste en huiles automobiles et motos à Cotonou</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="produits.html">Produits</a></li>
+                    <li><a href="apropos.html">À Propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📱 +229 62 80 30 08</p>
+                <p>📍 Akorgbato, Cotonou</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Akel Service. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

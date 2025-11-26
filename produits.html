@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Produits - Akel Service</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Akel Service</div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="produits.html" class="active">Produits</a></li>
+                <li><a href="apropos.html">À Propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Nos Huiles Automobiles</h1>
+            <p>Découvrez notre gamme complète d'huiles pour motos et voitures</p>
+        </div>
+    </section>
+
+    <!-- Filtres de produits -->
+    <section class="product-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterProducts('all')">Tous les produits</button>
+                <button class="filter-btn" onclick="filterProducts('1L')">1 Litre</button>
+                <button class="filter-btn" onclick="filterProducts('4L-5L')">4-5 Litres</button>
+                <button class="filter-btn" onclick="filterProducts('premium')">Premium</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalogue de produits -->
+    <section class="products-catalog">
+        <div class="container">
+            <!-- Lubrifiants 1L -->
+            <div class="product-category" data-category="1L">
+                <h2 class="category-title">
+                    <span class="category-badge">1L</span>
+                    Huiles 1 Litre - Motos
+                </h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/shell.jpg" alt="Shell">
+                        </div>
+                        <h3>Shell</h3>
+                        <p class="product-volume">Volume : 1L</p>
+                        <p class="product-price">2 500 FCFA</p>
+                        <p class="product-desc">Huile haute performance pour moto</p>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/national.jpg" alt="National">
+                        </div>
+                        <h3>National</h3>
+                        <p class="product-volume">Volume : 1L</p>
+                        <p class="product-price">2 000 FCFA</p>
+                        <p class="product-desc">Qualité fiable pour votre moto</p>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/maxwell.jpg" alt="Maxwell">
+                        </div>
+                        <h3>Maxwell</h3>
+                        <p class="product-volume">Volume : 1L</p>
+                        <p class="product-price">2 200 FCFA</p>
+                        <p class="product-desc">Protection optimale du moteur</p>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/eagle.jpg" alt="Eagle">
+                        </div>
+                        <h3>Eagle</h3>
+                        <p class="product-volume">Volume : 1L</p>
+                        <p class="product-price">2 300 FCFA</p>
+                        <p class="product-desc">Performance et durabilité</p>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/yamalube.jpg" alt="Yamalube">
+                        </div>
+                        <h3>Yamalube 10w30</h3>
+                        <p class="product-volume">Volume : 1L</p>
+                        <p class="product-price">3 000 FCFA</p>
+                        <p class="product-desc">Recommandé par Yamaha</p>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/champion.jpg" alt="Champion">
+                        </div>
+                        <h3>Champion 4T 20w50</h3>
+                        <p class="product-volume">Volume : 1L</p>
+                        <p class="product-price">2 800 FCFA</p>
+                        <p class="product-desc">Pour moteurs 4 temps</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lubrifiants 4L et 5L -->
+            <div class="product-category" data-category="4L-5L">
+                <h2 class="category-title">
+                    <span class="category-badge">4L-5L</span>
+                    Huiles 4 et 5 Litres - Voitures
+                </h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/prima-15w50.jpg" alt="Prima 15w50">
+                        </div>
+                        <h3>Prima 15w50</h3>
+                        <p class="product-volume">Volume : 4L</p>
+                        <p class="product-price">8 500 FCFA</p>
+                        <p class="product-desc">Huile multigrade pour voiture</p>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/champion-20w50-5l.jpg" alt="Champion 20w50 5L">
+                        </div>
+                        <h3>Champion 20w50</h3>
+                        <p class="product-volume">Volume : 5L</p>
+                        <p class="product-price">12 000 FCFA</p>
+                        <p class="product-desc">Protection maximale du moteur</p>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/champion-15w40.jpg" alt="Champion 15w40">
+                        </div>
+                        <h3>Champion 15w40</h3>
+                        <p class="product-volume">Volume : 4L</p>
+                        <p class="product-price">10 500 FCFA</p>
+                        <p class="product-desc">Idéal pour climat tropical</p>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/champion-5w30.jpg" alt="Champion 5w30">
+                        </div>
+                        <h3>Champion 5w30</h3>
+                        <p class="product-volume">Volume : 4L</p>
+                        <p class="product-price">11 500 FCFA</p>
+                        <p class="product-desc">Haute performance toutes saisons</p>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/oryx-axcella.jpg" alt="Oryx Axcella">
+                        </div>
+                        <h3>Oryx Axcella 20w50</h3>
+                        <p class="product-volume">Volume : 4L</p>
+                        <p class="product-price">13 000 FCFA</p>
+                        <p class="product-desc">Technologie synthétique avancée</p>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/bardahl-5w30.jpg" alt="Bardahl 5w30">
+                        </div>
+                        <h3>Bardahl 5w30</h3>
+                        <p class="product-volume">Volume : 5L</p>
+                        <p class="product-price">14 500 FCFA</p>
+                        <p class="product-desc">Qualité premium reconnue</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gamme Premium -->
+            <div class="product-category" data-category="premium">
+                <h2 class="category-title">
+                    <span class="category-badge premium-badge">Premium</span>
+                    Gamme Premium
+                </h2>
+                <div class="products-grid">
+                    <div class="product-card premium">
+                        <div class="product-image">
+                            <img src="images/shell-helix.jpg" alt="Shell Helix">
+                        </div>
+                        <h3>Shell Helix 15w40</h3>
+                        <p class="product-volume">Volume : 4L</p>
+                        <p class="product-price">16 000 FCFA</p>
+                        <p class="product-desc">Excellence Shell pour votre moteur</p>
+                        <div class="premium-badge-card">★ Premium</div>
+                    </div>
+
+                    <div class="product-card premium">
+                        <div class="product-image">
+                            <img src="images/champion-new-energy.jpg" alt="Champion New Energy">
+                        </div>
+                        <h3>Champion New Energy</h3>
+                        <p class="product-volume">Volume : 4L</p>
+                        <p class="product-price">15 500 FCFA</p>
+                        <p class="product-desc">Nouvelle génération d'huiles</p>
+                        <div class="premium-badge-card">★ Premium</div>
+                    </div>
+
+                    <div class="product-card premium">
+                        <div class="product-image">
+                            <img src="images/bardahl-xtc.jpg" alt="Bardahl XTC">
+                        </div>
+                        <h3>Bardahl XTC 5w30</h3>
+                        <p class="product-volume">Volume : 5L</p>
+                        <p class="product-price">18 000 FCFA</p>
+                        <p class="product-desc">Technologie XTC pour performances extrêmes</p>
+                        <div class="premium-badge-card">★ Premium</div>
+                    </div>
+
+                    <div class="product-card premium">
+                        <div class="product-image">
+                            <img src="images/stabilis-5w30.jpg" alt="Stabilis">
+                        </div>
+                        <h3>Stabilis 5w30</h3>
+                        <p class="product-volume">Volume : 5L</p>
+                        <p class="product-price">17 500 FCFA</p>
+                        <p class="product-desc">Stabilité et protection longue durée</p>
+                        <div class="premium-badge-card">★ Premium</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Vous ne trouvez pas ce que vous cherchez ?</h2>
+            <p>Contactez-nous et nous vous aiderons à trouver l'huile parfaite pour votre véhicule</p>
+            <a href="contact.html" class="cta-button">Contactez-nous</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Akel Service</h3>
+                <p>Votre spécialiste en huiles automobiles et motos à Cotonou</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="produits.html">Produits</a></li>
+                    <li><a href="apropos.html">À Propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📱 +229 62 80 30 08</p>
+                <p>📍 Akorgbato, Cotonou</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Akel Service. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
