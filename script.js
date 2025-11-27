@@ -580,4 +580,4 @@ if (phoneInput) {
 
 // CONSOLE LOG
 console.log('%c🚗 Akel Service ', 'background: #FF6B35; color: #FFF; font-size: 20px; font-weight: bold; padding: 10px;');
-console.log('%c✅ Nouveau système de panier activé', 'color: #FF6B35; font-size: 14px; font-weight: bold;');
+console.log('%c✅ Nouveau système de panier activé', 'color: #FF6B35; font-size: 14px; font-weight: bold;'
