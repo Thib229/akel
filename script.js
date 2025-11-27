@@ -444,10 +444,11 @@ document.head.appendChild(style);
 
 // FILTRES PRODUITS
 
-function filterProducts(category) {
+function filterProducts(category, clickedBtn) {
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+    // Use the passed button element if available (safer than relying on global `event`)
+    if (clickedBtn && clickedBtn.classList) clickedBtn.classList.add('active');
 
     const categories = document.querySelectorAll('.product-category');
     

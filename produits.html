@@ -37,10 +37,10 @@
     <section class="product-filters">
         <div class="container">
             <div class="filter-buttons">
-                <button class="filter-btn active" onclick="filterProducts('all')">Tous les produits</button>
-                <button class="filter-btn" onclick="filterProducts('1L')">1 Litre</button>
-                <button class="filter-btn" onclick="filterProducts('4L-5L')">4-5 Litres</button>
-                <button class="filter-btn" onclick="filterProducts('premium')">Huiles</button>
+                <button class="filter-btn active" onclick="filterProducts('all', this)">Tous les produits</button>
+                <button class="filter-btn" onclick="filterProducts('1L', this)">1 Litre</button>
+                <button class="filter-btn" onclick="filterProducts('4L-5L', this)">4-5 Litres</button>
+                <button class="filter-btn" onclick="filterProducts('premium', this)">Huiles</button>
             </div>
         </div>
     </section>
@@ -235,7 +235,9 @@
                         <p class="product-price">2 500 FCFA</p>
                         <p class="product-desc">Huile haute performance pour moto</p>
                     </div>
-            </div> <br><br>
+                    </div>
+                </div>
+
 
             <!-- Lubrifiants 4L et 5L -->
             <div class="product-category" data-category="4L-5L">
