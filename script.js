@@ -2,6 +2,21 @@
 // Panier de produits
 let cart = [];
 
+// Helper: parse price string like "3 800 FCFA" into number (3800)
+function parsePrice(priceText) {
+    if (!priceText) return 0;
+    // remove all non-digit characters
+    const digits = priceText.replace(/\D/g, '');
+    return digits ? parseInt(digits, 10) : 0;
+}
+
+// Helper: format number back to localized string with FCFA
+function formatCurrency(amount) {
+    if (typeof amount !== 'number') amount = Number(amount) || 0;
+    // Use fr-FR so thousand separator becomes a space-like character
+    return amount.toLocaleString('fr-FR') + ' FCFA';
+}
+
 // Toggle Menu Mobile
 function toggleMenu() {
     const navLinks = document.getElementById('navLinks');
@@ -65,9 +80,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const name = card.querySelector('h3')?.textContent?.trim() || 'Produit';
             const volume = card.querySelector('.product-volume')?.textContent?.trim() || '';
             const description = card.querySelector('.product-desc')?.textContent?.trim() || '';
+            const priceLabel = card.querySelector('.product-price')?.textContent?.trim() || '';
+            const priceNumber = parsePrice(priceLabel);
 
-            // Ajouter au panier
-            addToCart({ name, volume, description });
+            // Ajouter au panier (include price)
+            addToCart({ name, volume, description, priceLabel, priceNumber });
 
             // Ouvrir la modal du panier pour que l'utilisateur puisse valider
             const modal = document.getElementById('cartModal');
@@ -126,6 +143,8 @@ function setupProductCheckboxes() {
         const productName = card.querySelector('h3').textContent;
         const productVolume = card.querySelector('.product-volume').textContent;
         const productDesc = card.querySelector('.product-desc').textContent;
+        const productPriceLabel = card.querySelector('.product-price')?.textContent || '';
+        const productPriceNumber = parsePrice(productPriceLabel);
         
         // Event listener sur la checkbox
         const checkboxInput = checkbox.querySelector('input');
@@ -134,7 +153,9 @@ function setupProductCheckboxes() {
                 addToCart({
                     name: productName,
                     volume: productVolume,
-                    description: productDesc
+                    description: productDesc,
+                    priceLabel: productPriceLabel,
+                    priceNumber: productPriceNumber
                 });
             } else {
                 removeFromCart(productName);
@@ -146,6 +167,9 @@ function setupProductCheckboxes() {
 function addToCart(product) {
     // Vérifier si le produit n'est pas déjà dans le panier
     if (!cart.find(item => item.name === product.name)) {
+        // Ensure price properties are present
+        product.priceNumber = product.priceNumber || parsePrice(product.priceLabel || '');
+        product.priceLabel = product.priceLabel || (product.priceNumber ? formatCurrency(product.priceNumber) : '');
         cart.push(product);
         updateCartDisplay();
         saveCartToStorage();
@@ -202,6 +226,9 @@ function createCartModal() {
             <div class="cart-items" id="cartItems">
                 <div class="cart-empty">Votre panier est vide</div>
             </div>
+            <div class="cart-summary" id="cartSummary" style="display:none; margin: 1rem 0; text-align: right; font-weight:700; font-size:1.1rem;">
+                Total : <span id="cartTotal">0 FCFA</span>
+            </div>
             <div class="cart-actions">
                 <button class="btn-command" onclick="sendCartToWhatsApp()">
                     <span>📱</span> Commander sur WhatsApp
@@ -237,18 +264,31 @@ function updateCartModal() {
     
     if (cart.length === 0) {
         cartItems.innerHTML = '<div class="cart-empty">Votre panier est vide</div>';
+        const summary = document.getElementById('cartSummary');
+        if (summary) summary.style.display = 'none';
     } else {
         cartItems.innerHTML = cart.map(item => `
             <div class="cart-item">
                 <div>
                     <div class="cart-item-name">${item.name}</div>
                     <div style="color: var(--text-gray); font-size: 0.9rem;">${item.volume}</div>
+                    ${item.description ? `<div style="color: var(--text-gray); font-size:0.85rem; margin-top:6px;">${item.description}</div>` : ''}
                 </div>
-                <button class="cart-item-remove" onclick="removeFromCart('${item.name}')">
-                    Retirer
-                </button>
+                <div style="display:flex; flex-direction:column; align-items:flex-end; gap:6px;">
+                    <div style="font-weight:700; color: var(--primary-orange);">${item.priceLabel ? item.priceLabel : ''}</div>
+                    <button class="cart-item-remove" onclick="removeFromCart('${item.name}')">Retirer</button>
+                </div>
             </div>
         `).join('');
+
+        // Update summary / total
+        const total = cart.reduce((sum, it) => sum + (it.priceNumber || 0), 0);
+        const summary = document.getElementById('cartSummary');
+        const totalEl = document.getElementById('cartTotal');
+        if (summary && totalEl) {
+            totalEl.textContent = formatCurrency(total);
+            summary.style.display = 'block';
+        }
     }
 }
 
@@ -277,23 +317,27 @@ function sendCartToWhatsApp() {
         return;
     }
     
-    // Construire le message WhatsApp
-    let message = `*🛒 NOUVELLE COMMANDE - Akel Service*%0A%0A`;
-    message += `*Produits commandés :*%0A`;
-    message += `━━━━━━━━━━━━━━━━━━%0A`;
-    
+    // Construire le message WhatsApp (compose readable text then encodeURIComponent)
+    let message = `*🛒 NOUVELLE COMMANDE - Akel Service*\n\n`;
+    message += `*Produits commandés :*\n`;
+    message += `━━━━━━━━━━━━━━━━━━\n`;
+
     cart.forEach((item, index) => {
-        message += `%0A*${index + 1}. ${item.name}*%0A`;
-        message += `   ${item.volume}%0A`;
+        message += `\n*${index + 1}. ${item.name}*\n`;
+        message += `   ${item.volume}\n`;
+        if (item.priceNumber) message += `   Prix : ${formatCurrency(item.priceNumber)}\n`;
     });
-    
-    message += `%0A━━━━━━━━━━━━━━━━━━%0A`;
-    message += `%0A*Nombre total de produits :* ${cart.length}%0A`;
-    message += `%0A_Merci de me confirmer la disponibilité et les prix._`;
+
+    message += `\n━━━━━━━━━━━━━━━━━━\n`;
+    message += `\n*Nombre total de produits :* ${cart.length}\n`;
+
+    const totalAmount = cart.reduce((sum, it) => sum + (it.priceNumber || 0), 0);
+    if (totalAmount > 0) message += `\n*Montant total :* ${formatCurrency(totalAmount)}\n`;
     
     // Ouvrir WhatsApp
     const phoneNumber = '22962803008';
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/${phoneNumber}?text=${encoded}`, '_blank');
     
     // Afficher message de confirmation
     showNotification('✓ Redirection vers WhatsApp...');
@@ -313,6 +357,12 @@ function loadCartFromStorage() {
     const savedCart = localStorage.getItem('akelServiceCart');
     if (savedCart) {
         cart = JSON.parse(savedCart);
+        // Ensure older saved items have consistent price fields
+        cart = cart.map(it => {
+            it.priceNumber = it.priceNumber || parsePrice(it.priceLabel || '');
+            it.priceLabel = it.priceLabel || (it.priceNumber ? formatCurrency(it.priceNumber) : '');
+            return it;
+        });
         updateCartDisplay();
         
         // Cocher les checkboxes des produits dans le panier
